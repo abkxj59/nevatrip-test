@@ -1,0 +1,286 @@
+.card {
+  max-width: 400px;
+  margin: 0 auto 30px;
+  position: relative;
+
+  @include vp-1200 {
+    max-width: none;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-left: 30px;
+    margin-bottom: 60px;
+  }
+}
+
+.card--all-year {
+  &::before {
+    position: absolute;
+    top: 50px;
+    content: "Круглый год";
+    text-transform: uppercase;
+    padding: 8px 17px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 19px;
+    color: #3e3e3e;
+    background-color: #fed74b;
+    z-index: 2;
+
+    @include vp-1200 {
+      font-size: 16px;
+      padding: 13px 33px;
+      top: 80px;
+    }
+  }
+}
+
+.card--new {
+  &::after {
+    position: absolute;
+    top: 0;
+    content: "Новинка";
+    text-transform: uppercase;
+    padding: 12px 27px;
+    border-radius: 16px 0 16px 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $color-default-white;
+    background-color: #7553ff;
+    z-index: 2;
+
+    @include vp-1200 {
+      background-color: #099ce8;
+      font-size: 16px;
+      top: 20px;
+      border-radius: 0;
+    }
+  }
+}
+
+.card__pic-wrapper {
+  position: relative;
+  height: 0;
+  padding-top: 64%;
+
+  @include vp-1200 {
+    width: 478px;
+    height: 100%;
+    padding-top: 0;
+  }
+}
+
+.card__pic {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+
+  @include vp-1200 {
+    border-radius: 16px 0 0 16px;
+  }
+}
+
+.card__content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-radius: 0 0 16px 16px;
+  border: 0.3px solid #828282;
+  border-top: none;
+  padding: 16px 12px 20px;
+
+  @include vp-1200 {
+    grid-template-columns: auto 1fr;
+    padding: 16px 20px 20px;
+    border: 0.3px solid #828282;
+    border-radius: 0 16px 16px 0;
+    border-left: none;
+  }
+}
+
+.card__heading {
+  grid-column: 1 / 3;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #404040;
+
+  @include vp-1200 {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 34px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.card__discount {
+  @include vp-1200 {
+    display: none;
+  }
+}
+
+.card__duration {
+  display: flex;
+  align-items: center;
+  grid-column: 1 / 3;
+  grid-row: 1;
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #9e9e9e;
+
+  @include vp-1200 {
+    font-size: 14px;
+    grid-row: 2;
+  }
+}
+
+.card__clock {
+  margin-right: 9px;
+}
+
+.card__features {
+  grid-column: 1 / 3;
+  margin-top: 5px;
+  margin-bottom: 17px;
+  margin-left: 37px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4b4b4b;
+  list-style: none;
+
+  @include vp-1200 {
+    margin-top: 12px;
+    margin-left: 30px;
+    margin-bottom: 7px;
+    font-size: 18px;
+    color: #343434;
+  }
+}
+
+.card__feature {
+  position: relative;
+  margin-bottom: 15px;
+
+  @include vp-1200 {
+    margin-bottom: 17px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 3px;
+    background-image: url("../img/sprite/check-mark.svg");
+    width: 16px;
+    height: 16px;
+    left: -35px;
+
+    @include vp-1200 {
+      left: -30px;
+    }
+  }
+}
+
+.card__feature--time {
+  @include vp-1200 {
+    display: flex;
+  }
+}
+
+.card__time-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1200 {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+}
+
+.card__time-item {
+  margin-right: 5px;
+  margin-bottom: 5px;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+
+  &--hidden {
+    display: none;
+    margin: 0;
+  }
+}
+
+.card__time-button {
+  background: #d9e8ff;
+  border-radius: 11px;
+  border: none;
+  padding: 2px 14px;
+
+  &:hover {
+    background-color: #6ba6ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    color: $color-default-white;
+  }
+}
+
+.card__price {
+  max-width: 100px;
+  margin-left: 5px;
+  font-size: 30px;
+  color: $color-default-black;
+
+  @include vp-1200 {
+    max-width: 140px;
+    margin-left: 0;
+    font-size: 36px;
+  }
+}
+
+.card__price-on-pier {
+  font-size: 10px;
+  line-height: 12px;
+  margin: 0;
+
+  @include vp-1200 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+.card__more {
+  align-self: center;
+  text-align: center;
+  height: min-content;
+  background: #fed74b;
+  border: 0.5px solid #cba500;
+  border-radius: 20px;
+  padding: 10px;
+  width: 78%;
+  font-size: 14px;
+  line-height: 20px;
+  color: #404040;
+  margin-right: 10px;
+  margin-left: auto;
+
+  &:hover {
+    background-color: #cba500;
+  }
+
+  @include vp-1200 {
+    width: fit-content;
+    font-size: 18px;
+    padding: 16px 40px;
+    margin-left: 15px;
+    margin-right: auto;
+  }
+}

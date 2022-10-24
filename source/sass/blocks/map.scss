@@ -1,0 +1,26 @@
+.map__section {
+  margin: 20px 40px;
+}
+
+.map__list {
+  list-style: none;
+}
+
+.map__item {
+  margin-bottom: 30px;
+}
+
+.map__link {
+  background-color: #fed74b;
+  border: 0.5px solid #cba500;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #404040;
+
+  &:hover {
+    background-color: #cba500;
+  }
+}

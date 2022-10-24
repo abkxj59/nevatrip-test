@@ -1,0 +1,59 @@
+.form {
+  width: 655px;
+  padding: 30px;
+  margin: 20px auto;
+  border: 2px solid #404040;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px 5px #4e4e4e;
+  font-size: 18px;
+}
+
+.form fieldset {
+  border: none;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.form label {
+  display: inline-block;
+  width: 280px;
+}
+
+.form select,
+.form input {
+  background-color: #ddf4ff;
+  width: 260px;
+  margin-left: 10px;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #a6ddf9;
+  }
+}
+
+.form input[type="number"] {
+  width: 100px;
+  line-height: 23.5px;
+  text-align: center;
+}
+
+.form button {
+  background-color: #fed74b;
+  border: 0.5px solid #cba500;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #404040;
+
+  &:hover {
+    background-color: #cba500;
+  }
+}
+
+.form__message {
+  white-space: pre-wrap;
+}
